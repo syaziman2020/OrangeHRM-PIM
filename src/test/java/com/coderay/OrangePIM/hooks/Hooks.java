@@ -28,29 +28,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Hooks {
-	public static WebDriver driver;
+	public WebDriver driver;
 	public static Properties property;
-	
+
 	@Before
-	public void setup(String browser, ScenarioContext context) throws IOException{
-		
+	public void setup() throws IOException {
+
 		FileReader file = new FileReader("./src//test//resources//config.properties");
 		property = new Properties();
 		property.load(file);
 
-		Map<String, Object> prefs = new HashMap<String, Object>();
-		prefs.put("credentials_enable_service", false);
-		prefs.put("profile.password_manager_enabled", false);
-		prefs.put("profile.password_manager_leak_detection_enabled", false);
+		String browserName = property.getProperty("browser");
 
-		ChromeOptions options = new ChromeOptions();
-		options.setExperimentalOption("prefs", prefs);
-		options.addArguments("--disable-notifications");
-		options.addArguments("--disable-popup-blocking");
-		options.addArguments("--guest");
-		
-		switch (browser.toLowerCase()) {
+		switch (browserName.toLowerCase()) {
 		case "chrome":
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+			prefs.put("profile.password_manager_leak_detection_enabled", false);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-popup-blocking");
+			options.addArguments("--guest");
 			driver = new ChromeDriver(options);
 			break;
 		case "edge":
@@ -63,10 +63,9 @@ public class Hooks {
 			System.out.println("Invalid browser");
 			return;
 		}
-		
-		context.setContext("driver", driver);
-		
-		
+
+		ScenarioContext.setContext("driver", driver);
+
 		driver.manage().deleteAllCookies();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -74,17 +73,15 @@ public class Hooks {
 		driver.get(property.getProperty("appURL"));
 
 		driver.manage().window().maximize();
-
-		
 	}
-	
+
 	@After
 	public void teardown() {
 		driver.quit();
 		ScenarioContext.clear();
 	}
-	
-	public String captureScreen(WebDriver String,String screenshotName) throws IOException {
+
+	public String captureScreen(WebDriver String, String screenshotName) throws IOException {
 		if (driver == null) {
 			throw new IOException("WebDriver instance is null. Tidak dapat mengambil screenshot.");
 		}

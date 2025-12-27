@@ -6,7 +6,7 @@ import java.util.Map;
 public class ScenarioContext {
 	private static ThreadLocal<Map<String, Object>> scenarioContext = ThreadLocal.withInitial(HashMap::new);
 
-    public void setContext(String key, Object value) {
+    public static void setContext(String key, Object value) {
         scenarioContext.get().put(key, value);
     }
 
