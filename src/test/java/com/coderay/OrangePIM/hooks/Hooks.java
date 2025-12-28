@@ -1,5 +1,6 @@
 package com.coderay.OrangePIM.hooks;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
+import com.coderay.OrangePIM.stepDefinitions.BaseClass;
 import com.coderay.OrangePIM.utilities.ScenarioContext;
 
 import java.util.Properties;
@@ -20,6 +22,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -70,33 +74,30 @@ public class Hooks {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-		driver.get(property.getProperty("appURL"));
-
 		driver.manage().window().maximize();
 	}
 
 	@After
-	public void teardown() {
-		driver.quit();
-		ScenarioContext.clear();
-	}
+	public void teardown(Scenario scenario) {
+		if (scenario.isFailed()) {
+			try {
+				BaseClass base = new BaseClass(driver);
 
-	public String captureScreen(WebDriver String, String screenshotName) throws IOException {
-		if (driver == null) {
-			throw new IOException("WebDriver instance is null. Tidak dapat mengambil screenshot.");
+				String path = base.captureScreen(driver, scenario.getName());
+				System.out.println("Screenshot disimpan di: " + path);
+
+				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+				Allure.addAttachment("Failed Scenario Screenshot", new ByteArrayInputStream(screenshot));
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
 
-		String destination = System.getProperty("user.dir") + "/reports/screenshots/" + screenshotName + "_" + dateName
-				+ ".png";
-		File finalDestination = new File(destination);
-
-		finalDestination.getParentFile().mkdirs();
-
-		FileHandler.copy(source, finalDestination);
-		return destination;
+		if (driver != null) {
+			driver.quit();
+		}
+		ScenarioContext.clear();
 	}
 
 }

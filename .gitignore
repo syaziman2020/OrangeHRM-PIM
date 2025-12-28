@@ -1,0 +1,10 @@
+/target/
+
+allure-results/*
+
+allure-results/environment.properties
+allure-results/executor.json
+
+/allure-report/
+
+/failed-screenshots/
