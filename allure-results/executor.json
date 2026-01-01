@@ -1,0 +1,7 @@
+{
+  "name": "Local Server",
+  "type": "Local",
+  "buildName": "Test-Build-#001",
+  "reportName": "Smoke Test Report",
+  "buildUrl": "http://jenkins-server:8080/job/OrangeHRM/452"
+}

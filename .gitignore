@@ -1,9 +1,11 @@
 /target/
 
+# 1. Abaikan semua isi folder allure-results
 allure-results/*
 
-allure-results/environment.properties
-allure-results/executor.json
+# 2. TAPI, berikan pengecualian untuk dua file ini agar tetap terbawa
+!allure-results/environment.properties
+!allure-results/executor.json
 
 /allure-report/
 
