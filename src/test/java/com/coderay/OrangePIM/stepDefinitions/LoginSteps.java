@@ -14,9 +14,15 @@ import com.coderay.OrangePIM.utilities.ScenarioContext;
 
 public class LoginSteps {
     
-    WebDriver driver = (WebDriver) ScenarioContext.getContext("driver");
+    WebDriver driver;
     LoginPage loginPage;
     DashboardPage dashPage;
+    
+    public LoginSteps() {
+    	this.driver  = (WebDriver) ScenarioContext.getContext("driver");
+    	this.loginPage = new LoginPage(driver);
+    	this.dashPage = new DashboardPage(driver);
+    }
     
 
     @Given("User opens the browser and navigates to the login page {string}")
@@ -24,8 +30,6 @@ public class LoginSteps {
         assertNotNull(driver, "Driver instance is null!");
         if (!driver.getCurrentUrl().equals(url)) {
             driver.get(url);
-            loginPage = new LoginPage(driver);
-            dashPage = new DashboardPage(driver);
         }
     }
 

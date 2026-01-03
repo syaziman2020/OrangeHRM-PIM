@@ -3,6 +3,7 @@ package com.coderay.OrangePIM.runners;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectDirectories;
+import org.junit.platform.suite.api.SelectFile;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
@@ -13,6 +14,7 @@ import org.junit.platform.suite.api.Suite;
 		+ "json:target/cucumber-reports/cucumber-reports.json,"
 		+ "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm")
 @ConfigurationParameter(key = "cucumber.publish.quiet", value = "true")
+@ConfigurationParameter(key = "cucumber.execution.dry-run", value = "false")
 @ConfigurationParameter(
 	    key = "cucumber.filter.tags", 
 	    value = ""

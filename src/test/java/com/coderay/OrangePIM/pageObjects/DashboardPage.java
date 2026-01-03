@@ -12,9 +12,16 @@ public class DashboardPage extends BasePage {
 
 	@FindBy(xpath = "//h6[normalize-space()='Dashboard']")
 	WebElement dashboardText;
+	
+	@FindBy(xpath="//a[@class='oxd-main-menu-item'][contains(.,'PIM')]")
+	WebElement tabPIM;
 
 	public String getDashboardTitle() {
 		return dashboardText.getText();
 	}
 
+	
+	public void clickPimModule() {
+		tabPIM.click();
+	}
 }
