@@ -137,5 +137,16 @@ public class AddEmployeeSteps {
 	public void user_sees_the_error_validatet() {
 		assertTrue(addEmpPage.getFormValidate().isDisplayed());
 	}
+	
+	@And("User upload photo profile")
+	public void user_upload_photo_profile() {
+		String pathPhoto = System.getProperty("user.dir")+"/datatest/sample_profile.jpg";
+		addEmpPage.uploadPhoto(pathPhoto);
+	}
+	
+	@And("User set disabled status radio")
+	public void user_set_disabled_status_radio() {
+		addEmpPage.setDisableSatus();
+	}
 
 }

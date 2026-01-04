@@ -46,6 +46,20 @@ public class AddEmployeePage extends BasePage{
 	@FindBy(xpath = "//span[contains(@class,'oxd-input-field-error-message')]")
 	WebElement formValidate;
 	
+	@FindBy(xpath ="//input[@type='file' and @class = 'oxd-file-input']")
+	WebElement inputPhoto;
+	
+	@FindBy(xpath = "//label[normalize-space()='Disabled']")
+	WebElement radioDisabled;
+	
+	public void setDisableSatus() {
+		radioDisabled.click();
+	}
+	
+	public void uploadPhoto(String path) {
+		inputPhoto.sendKeys(path);
+	}
+	
 	public WebElement getFormValidate() {
 		return formValidate;
 	}
