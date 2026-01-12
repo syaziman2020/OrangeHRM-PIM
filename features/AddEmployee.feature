@@ -79,7 +79,6 @@ Feature: Add Employe on PIM Module
 
   @SmokeTest @Negatif
   Scenario: Validate error when passwords do not match
-    When User enters username "Admin" and password "admin123"
     When User clicks the add button
     And User enter the random first name and lastname
     And User delete the default employee id

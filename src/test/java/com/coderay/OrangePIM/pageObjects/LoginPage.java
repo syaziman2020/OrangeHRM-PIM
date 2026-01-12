@@ -32,8 +32,16 @@ public class LoginPage extends BasePage{
 		usernameField.sendKeys(username);
 	}
 	
+	public WebElement getUsername() {
+		return usernameField;
+	}
+	
 	public void setPassword(String password) {
 		passwordField.sendKeys(password);
+	}
+	
+	public WebElement getPassword() {
+		return passwordField;
 	}
 	
 	public void clickLogin() {

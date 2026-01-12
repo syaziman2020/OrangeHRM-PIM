@@ -76,6 +76,7 @@ public class AddEmployeePage extends BasePage{
 		confirmPassField.sendKeys(confirmPass);
 	}
 	
+	
 	public void setFirstName(String firstName) {
 		firstNameField.sendKeys(firstName);
 	}
@@ -104,6 +105,10 @@ public class AddEmployeePage extends BasePage{
 	public void clickSave() {
 		btnSave.click();
 	}
+	
+	public WebElement getBtnSave() {
+		return btnSave;
+	}
 	public WebElement getToastSuccess() {
 		return toastSuccess;
 	}
@@ -114,6 +119,10 @@ public class AddEmployeePage extends BasePage{
 	
 	public void clickSwitchLogin() {
 		switchLogin.click();
+	}
+	
+	public WebElement getSwitchLogin() {
+		return switchLogin;
 	}
 
 }

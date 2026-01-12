@@ -1,14 +1,12 @@
 package com.coderay.OrangePIM.hooks;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
 
 import com.coderay.OrangePIM.stepDefinitions.BaseClass;
 import com.coderay.OrangePIM.utilities.ScenarioContext;
@@ -72,7 +70,7 @@ public class Hooks {
 
 		driver.manage().deleteAllCookies();
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 		driver.manage().window().maximize();
 	}

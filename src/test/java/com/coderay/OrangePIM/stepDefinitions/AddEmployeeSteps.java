@@ -3,7 +3,13 @@ package com.coderay.OrangePIM.stepDefinitions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.coderay.OrangePIM.pageObjects.AddEmployeePage;
 import com.coderay.OrangePIM.pageObjects.DashboardPage;
@@ -22,6 +28,7 @@ public class AddEmployeeSteps {
 	AddEmployeePage addEmpPage;
 	DashboardPage dashPage;
 	PersonalDetailPage personalPage;
+	Wait<WebDriver> wait;
 	
 	String firstEmployeeId;
 	public AddEmployeeSteps() {
@@ -30,6 +37,7 @@ public class AddEmployeeSteps {
 		this.pimPage = new PimPage(driver);
 		this.addEmpPage = new AddEmployeePage(driver);
 		this.personalPage = new PersonalDetailPage(driver);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
 	@When("User clicks the PIM module")
@@ -45,6 +53,7 @@ public class AddEmployeeSteps {
 
 	@When("User clicks the add button")
 	public void user_clicks_the_add_button() {
+		wait.until(ExpectedConditions.visibilityOfAllElements(pimPage.getDataEmployeeNames()));
 		firstEmployeeId = pimPage.getFirstId();
 		pimPage.clickAddEmployee();
 	}
@@ -78,7 +87,8 @@ public class AddEmployeeSteps {
 
 	@And("User clicks the save button")
 	public void user_clicks_the_save_button() {
-		addEmpPage.clickSave();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("oxd-form-loader")));
+		wait.until(ExpectedConditions.elementToBeClickable(addEmpPage.getBtnSave())).click();
 	}
 
 	@Then("User sees the success dialog")
@@ -98,7 +108,6 @@ public class AddEmployeeSteps {
 	
 	@And("User enter the existing employee id")
 	public void user_enter_the_existing_employee_id() {
-		System.out.println(firstEmployeeId);
 		addEmpPage.setEmployeeId(firstEmployeeId);
 	}
 	
@@ -109,7 +118,9 @@ public class AddEmployeeSteps {
 	
 	@And("User switch enabled login details")
 	public void user_switch_enabled_login_details() {
-		addEmpPage.clickSwitchLogin();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("oxd-form-loader")));
+		wait.until(ExpectedConditions.elementToBeClickable(addEmpPage.getSwitchLogin())).click();
+		
 	}
 	
 	@And("User enter the username")
