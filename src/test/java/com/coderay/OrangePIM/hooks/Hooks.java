@@ -23,9 +23,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,6 +51,7 @@ public class Hooks {
 			options.addArguments("--disable-notifications");
 			options.addArguments("--disable-popup-blocking");
 			options.addArguments("--guest");
+			options.addArguments("--headless");
 			driver = new ChromeDriver(options);
 			break;
 		case "edge":

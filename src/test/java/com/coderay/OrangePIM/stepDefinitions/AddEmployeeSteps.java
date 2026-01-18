@@ -146,7 +146,8 @@ public class AddEmployeeSteps {
 	
 	@Then("User sees the error validate")
 	public void user_sees_the_error_validatet() {
-		assertTrue(addEmpPage.getFormValidate().isDisplayed());
+		boolean isDisplay = wait.until(ExpectedConditions.visibilityOf(addEmpPage.getFormValidate())).isDisplayed();
+		assertTrue(isDisplay);
 	}
 	
 	@And("User upload photo profile")

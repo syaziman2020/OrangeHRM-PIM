@@ -1,0 +1,61 @@
+name: Selenium Automation CI/CD
+
+on:
+  push:
+    branches: [ master ] # Pastikan nama branch sesuai (main atau master)
+  schedule:
+    # Format: Minute, Hour, Day of Month, Month, Day of Week
+    # "0 1 * * *" berarti jam 01:00 UTC (sama dengan jam 08:00 WIB)
+    - cron: '0 1 * * 1-5'
+
+permissions: # Memberikan izin agar GitHub bisa menulis laporan ke repo Anda
+  contents: write
+
+jobs:
+  automation-test:
+    runs-on: ubuntu-latest # Menggunakan server Linux terbaru
+
+    steps:
+      - name: 1. Take code from repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+          
+      - name: 3. Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+        
+      - name: 4. Running Test
+        # run: mvn test -Dcucumber.options="--tags @Smoke"
+        run: mvn test
+        continue-on-error: true # SANGAT PENTING: Jika tes gagal, laporan Allure tetap dibuat.
+
+      - name: 5. Take previous report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages # Mengambil data dari branch laporan agar muncul grafik 'Trend'
+          path: gh-pages
+
+      - name: 6. Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results # (MODIFIKASI) Pastikan folder ini sesuai dengan output di pom.xml
+          allure_history: allure-history
+          keep_reports: 20 # Menyimpan riwayat 20 eksekusi terakhir
+
+      - name: 7. Publish ke GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages # Folder hasil laporan akan dikirim ke branch ini
+          publish_dir: allure-history
