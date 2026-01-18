@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -52,8 +53,6 @@ public class Hooks {
 			options.addArguments("--disable-popup-blocking");
 			options.addArguments("--guest");
 			options.addArguments("--headless");
-			options.addArguments("--window-size=1920,1080");
-			options.addArguments("--start-maximized");
 			driver = new ChromeDriver(options);
 			break;
 		case "edge":
@@ -72,7 +71,7 @@ public class Hooks {
 		driver.manage().deleteAllCookies();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
+		driver.manage().window().setSize(new Dimension(1920, 1080));
 		driver.manage().window().maximize();
 	}
 
