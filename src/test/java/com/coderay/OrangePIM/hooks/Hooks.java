@@ -52,6 +52,8 @@ public class Hooks {
 			options.addArguments("--disable-popup-blocking");
 			options.addArguments("--guest");
 			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			options.addArguments("--start-maximized");
 			driver = new ChromeDriver(options);
 			break;
 		case "edge":
