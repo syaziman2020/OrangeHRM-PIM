@@ -52,7 +52,8 @@ public class Hooks {
 			options.addArguments("--disable-notifications");
 			options.addArguments("--disable-popup-blocking");
 			options.addArguments("--guest");
-			options.addArguments("--headless");
+			options.addArguments("--headless=new");
+			options.addArguments("--window-size=1920,1080");
 			driver = new ChromeDriver(options);
 			break;
 		case "edge":
@@ -72,7 +73,6 @@ public class Hooks {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().setSize(new Dimension(1920, 1080));
-		driver.manage().window().maximize();
 	}
 
 	@After
