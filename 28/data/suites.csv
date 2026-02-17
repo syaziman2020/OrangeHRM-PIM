@@ -1,0 +1,26 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","24668","Validate error when photo file size exceeds the limit","","Tue Feb 17 03:38:32 UTC 2026","passed","Tue Feb 17 03:38:56 UTC 2026","","Add Employe on PIM Module","Validate error when photo file size exceeds the limit",""
+"","29140","Add a new employee with minimum required fields and a unique manual ID","","Tue Feb 17 03:35:10 UTC 2026","passed","Tue Feb 17 03:35:39 UTC 2026","","Add Employe on PIM Module","Add a new employee with minimum required fields and a unique manual ID",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","2859","Login failed with invalid credential","","Tue Feb 17 03:40:57 UTC 2026","passed","Tue Feb 17 03:41:00 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","9388","find employee with current and include past employee","","Tue Feb 17 03:40:13 UTC 2026","passed","Tue Feb 17 03:40:23 UTC 2026","","Check List Employe on PIM Module","find employee with current and include past employee",""
+"","38366","Successfully create login details with enabled status","","Tue Feb 17 03:37:15 UTC 2026","passed","Tue Feb 17 03:37:54 UTC 2026","","Add Employe on PIM Module","Successfully create login details with enabled status",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","2862","Login failed with invalid credential","","Tue Feb 17 03:41:03 UTC 2026","passed","Tue Feb 17 03:41:06 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","5996","Check total data with default pagination","","Tue Feb 17 03:40:23 UTC 2026","passed","Tue Feb 17 03:40:29 UTC 2026","","Check List Employe on PIM Module","Check total data with default pagination",""
+"","26707","Validate error when First Name is empty","","Tue Feb 17 03:35:39 UTC 2026","passed","Tue Feb 17 03:36:06 UTC 2026","","Add Employe on PIM Module","Validate error when First Name is empty",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3121","Login failed with invalid credential","","Tue Feb 17 03:41:00 UTC 2026","passed","Tue Feb 17 03:41:03 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","8494","find employee with partial name","","Tue Feb 17 03:40:05 UTC 2026","passed","Tue Feb 17 03:40:13 UTC 2026","","Check List Employe on PIM Module","find employee with partial name",""
+"","34021","Add a new employee using only mandatory fields","","Tue Feb 17 03:34:36 UTC 2026","failed","Tue Feb 17 03:35:10 UTC 2026","","Add Employe on PIM Module","Add a new employee using only mandatory fields",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3818","Successful login with valid credentials","","Tue Feb 17 03:40:53 UTC 2026","passed","Tue Feb 17 03:40:57 UTC 2026","","Login to OrangeHRM Dashboard","Successful login with valid credentials",""
+"","68555","Successfully create login details with disabled status","","Tue Feb 17 03:38:56 UTC 2026","broken","Tue Feb 17 03:40:05 UTC 2026","","Add Employe on PIM Module","Successfully create login details with disabled status",""
+"","38107","Validate error when passwords do not match","","Tue Feb 17 03:37:54 UTC 2026","passed","Tue Feb 17 03:38:32 UTC 2026","","Add Employe on PIM Module","Validate error when passwords do not match",""
+"","26044","Validate error for duplicate Employee ID","","Tue Feb 17 03:36:06 UTC 2026","passed","Tue Feb 17 03:36:32 UTC 2026","","Add Employe on PIM Module","Validate error for duplicate Employee ID",""
+"","43056","Successfully create login details with enabled status","","Tue Feb 17 03:36:32 UTC 2026","failed","Tue Feb 17 03:37:15 UTC 2026","","Add Employe on PIM Module","Successfully create login details with enabled status",""
+"","24026","Search employee name without record data","","Tue Feb 17 03:40:29 UTC 2026","passed","Tue Feb 17 03:40:53 UTC 2026","","Check List Employe on PIM Module","Search employee name without record data",""
