@@ -1,0 +1,26 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","52608","Successfully create login details with disabled status","","Thu Apr 30 04:35:12 UTC 2026","broken","Thu Apr 30 04:36:05 UTC 2026","","Add Employe on PIM Module","Successfully create login details with disabled status",""
+"","39196","Successfully create login details with enabled status","","Thu Apr 30 04:33:11 UTC 2026","failed","Thu Apr 30 04:33:50 UTC 2026","","Add Employe on PIM Module","Successfully create login details with enabled status",""
+"","23205","Add a new employee with minimum required fields and a unique manual ID","","Thu Apr 30 04:32:02 UTC 2026","failed","Thu Apr 30 04:32:26 UTC 2026","","Add Employe on PIM Module","Add a new employee with minimum required fields and a unique manual ID",""
+"","22956","Validate error when First Name is empty","","Thu Apr 30 04:32:26 UTC 2026","passed","Thu Apr 30 04:32:49 UTC 2026","","Add Employe on PIM Module","Validate error when First Name is empty",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3891","Login failed with invalid credential","","Thu Apr 30 04:36:52 UTC 2026","passed","Thu Apr 30 04:36:56 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","12273","Add a new employee using only mandatory fields","","Thu Apr 30 04:31:50 UTC 2026","failed","Thu Apr 30 04:32:02 UTC 2026","","Add Employe on PIM Module","Add a new employee using only mandatory fields",""
+"","7136","find employee with current and include past employee","","Thu Apr 30 04:36:13 UTC 2026","passed","Thu Apr 30 04:36:20 UTC 2026","","Check List Employe on PIM Module","find employee with current and include past employee",""
+"","7529","find employee with partial name","","Thu Apr 30 04:36:05 UTC 2026","passed","Thu Apr 30 04:36:13 UTC 2026","","Check List Employe on PIM Module","find employee with partial name",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3475","Login failed with invalid credential","","Thu Apr 30 04:37:00 UTC 2026","passed","Thu Apr 30 04:37:03 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3488","Login failed with invalid credential","","Thu Apr 30 04:36:56 UTC 2026","passed","Thu Apr 30 04:37:00 UTC 2026","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","5924","Check total data with default pagination","","Thu Apr 30 04:36:20 UTC 2026","passed","Thu Apr 30 04:36:26 UTC 2026","","Check List Employe on PIM Module","Check total data with default pagination",""
+"","36997","Validate error when passwords do not match","","Thu Apr 30 04:34:28 UTC 2026","passed","Thu Apr 30 04:35:05 UTC 2026","","Add Employe on PIM Module","Validate error when passwords do not match",""
+"","21950","Validate error for duplicate Employee ID","","Thu Apr 30 04:32:49 UTC 2026","passed","Thu Apr 30 04:33:11 UTC 2026","","Add Employe on PIM Module","Validate error for duplicate Employee ID",""
+"","38196","Successfully create login details with enabled status","","Thu Apr 30 04:33:50 UTC 2026","passed","Thu Apr 30 04:34:28 UTC 2026","","Add Employe on PIM Module","Successfully create login details with enabled status",""
+"","22367","Search employee name without record data","","Thu Apr 30 04:36:26 UTC 2026","passed","Thu Apr 30 04:36:48 UTC 2026","","Check List Employe on PIM Module","Search employee name without record data",""
+"","7556","Validate error when photo file size exceeds the limit","","Thu Apr 30 04:35:05 UTC 2026","passed","Thu Apr 30 04:35:12 UTC 2026","","Add Employe on PIM Module","Validate error when photo file size exceeds the limit",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","4376","Successful login with valid credentials","","Thu Apr 30 04:36:48 UTC 2026","passed","Thu Apr 30 04:36:52 UTC 2026","","Login to OrangeHRM Dashboard","Successful login with valid credentials",""
