@@ -1,0 +1,26 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3510","Login failed with invalid credential","","2026-08-24","passed","2026-08-24","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","22486","Search employee name without record data","","2026-08-24","passed","2026-08-24","","Check List Employe on PIM Module","Search employee name without record data",""
+"","7362","find employee with current and include past employee","","2026-08-24","passed","2026-08-24","","Check List Employe on PIM Module","find employee with current and include past employee",""
+"","5506","Check total data with default pagination","","2026-08-24","passed","2026-08-24","","Check List Employe on PIM Module","Check total data with default pagination",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3628","Login failed with invalid credential","","2026-08-24","passed","2026-08-24","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","32255","Add a new employee using only mandatory fields","","2026-08-24","failed","2026-08-24","","Add Employe on PIM Module","Add a new employee using only mandatory fields",""
+"","22456","Validate error for duplicate Employee ID","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Validate error for duplicate Employee ID",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3535","Login failed with invalid credential","","2026-08-24","passed","2026-08-24","","Login to OrangeHRM Dashboard","Login failed with invalid credential",""
+"","37870","Validate error when passwords do not match","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Validate error when passwords do not match",""
+"","42258","Successfully create login details with disabled status","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Successfully create login details with disabled status",""
+"  As a user of the OrangeHRM system
+  I want to log into the application using my credentials
+  So that I can access the HR management features","3933","Successful login with valid credentials","","2026-08-24","passed","2026-08-24","","Login to OrangeHRM Dashboard","Successful login with valid credentials",""
+"","26511","Add a new employee with minimum required fields and a unique manual ID","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Add a new employee with minimum required fields and a unique manual ID",""
+"","22684","Validate error when First Name is empty","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Validate error when First Name is empty",""
+"","42555","Successfully create login details with enabled status","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Successfully create login details with enabled status",""
+"","22252","Validate error when photo file size exceeds the limit","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Validate error when photo file size exceeds the limit",""
+"","7575","find employee with partial name","","2026-08-24","passed","2026-08-24","","Check List Employe on PIM Module","find employee with partial name",""
+"","37433","Successfully create login details with enabled status","","2026-08-24","passed","2026-08-24","","Add Employe on PIM Module","Successfully create login details with enabled status",""
